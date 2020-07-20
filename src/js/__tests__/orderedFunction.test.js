@@ -1,6 +1,13 @@
-import orderByProps from '../orderedFunction'
+import orderByProps from '../orderedFunction';
+
 test('should return an array of object properties in sorted order', () => {
-  const obj = { name: 'мечник', health: 10, level: 2, attack: 80, defence: 40 };
+  const obj = {
+    name: 'мечник',
+    health: 10,
+    level: 2,
+    attack: 80,
+    defence: 40,
+  };
   const order = ['name', 'level'];
   const result = [
     { key: 'name', value: 'мечник' },
@@ -8,12 +15,18 @@ test('should return an array of object properties in sorted order', () => {
     { key: 'attack', value: 80 },
     { key: 'defence', value: 40 },
     { key: 'health', value: 10 },
-  ]
+  ];
   expect(orderByProps(obj, order)).toEqual(result);
 });
 
 test('should return an array of object properties and values in alphabetical order', () => {
-  const obj = { health: 10, attack: 80, defence: 40, a: 'a', b: 'b' };
+  const obj = {
+    health: 10,
+    attack: 80,
+    defence: 40,
+    a: 'a',
+    b: 'b',
+  };
   const order = [];
   const result = [
     { key: 'a', value: 'a' },
@@ -21,7 +34,7 @@ test('should return an array of object properties and values in alphabetical ord
     { key: 'b', value: 'b' },
     { key: 'defence', value: 40 },
     { key: 'health', value: 10 },
-  ]
+  ];
   expect(orderByProps(obj, order)).toEqual(result);
 });
 
@@ -32,7 +45,7 @@ test('should return an array of object properties and values in alphabetical ord
     { key: 'attack', value: 80 },
     { key: 'defence', value: 40 },
     { key: 'health', value: 10 },
-  ]
+  ];
   expect(orderByProps(obj, order)).toEqual(result);
 });
 
